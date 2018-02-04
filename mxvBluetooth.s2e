@@ -1,0 +1,60 @@
+{
+  "extensionName": "mxvBluetooth",
+  "description": "Modify from Demo. Very ugly code, so use as your own risk. The baud rate is 9600, you have to change it youself. I just want to plug BT not to pin 0/1. I hope someone can help me to modify the code better.",
+  "version": "0.0.1",
+  "author": "zhisync(zhisync@gmail.com)",
+  "homepage": "https://github.com/zhisync/mxvBluetooth",
+  "sort": 0,
+  "javascriptURL": "js/demo.js",
+  "firmware": "1.0",
+  "extensionPort": 0,
+  "tags": "bluetooth",
+  "blockSpecs": [
+    [
+      "w",
+      "SoftwareSerial BT: Rx : %n Tx : %n)",
+      "SoftwareSerial BT",
+      "6",
+      "7",
+      {
+        "setup": "",
+        "inc": "",
+        "def": "SoftwareSerial BT = SoftwareSerial({0},{1});\n",
+        "work": "",
+        "loop": ""
+      }
+    ],
+    [
+      "R",
+      "BT available bytes",
+      "BTAvailable",
+      {
+        "setup": "BT.begin(9600);\n",
+        "inc": "",
+        "def": "",
+        "work": "BT.available()",
+        "loop": ""
+      }
+    ],
+    [
+      "R",
+      "BT read byte",
+      "BTRead",
+      {
+        "setup": "BT.begin(9600);\n",
+        "inc": "",
+        "def": "",
+        "work": "BT.read()",
+        "loop": ""
+      }
+    ]
+  ],
+  "menus": {},
+  "values": {},
+  "translators": {
+    "zh_TW": {
+      "BT available bytes": "BT 串口可讀取字節數",
+      "BT read byte": "BT 串口讀取一個字節"
+    }
+  }
+}
