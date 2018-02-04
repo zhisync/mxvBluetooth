@@ -1,0 +1,42 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <SoftwareSerial.h>
+
+
+double angle_rad = PI/180.0;
+double angle_deg = 180.0/PI;
+double input;
+SoftwareSerial BT = SoftwareSerial(6,7);
+
+
+
+void setup(){
+    BT.begin(9600);
+    
+    pinMode(13,OUTPUT);
+}
+
+void loop(){
+    
+    if((BT.available()) > (0)){
+        input = BT.read();
+    }
+    if(((input)==('f'))){
+        digitalWrite(13,1);
+    }
+    if(((input)==('b'))){
+        digitalWrite(13,0);
+    }
+    _delay(0.1);
+    
+    _loop();
+}
+
+void _delay(float seconds){
+    long endTime = millis() + seconds * 1000;
+    while(millis() < endTime)_loop();
+}
+
+void _loop(){
+    
+}
