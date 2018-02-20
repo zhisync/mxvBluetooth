@@ -47,6 +47,19 @@
         "work": "BT.read()",
         "loop": ""
       }
+    ],
+    [
+      "w",
+      "BT write text %s",
+      "BTWrite",
+      "hello",
+      {
+        "setup": "BT.begin(9600);\n",
+        "inc": "",
+        "def": "",
+        "work": "BT.println({0});\n",
+        "loop": ""
+      }
     ]
   ],
   "menus": {},
